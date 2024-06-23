@@ -39,10 +39,7 @@ namespace CollectArticles
 			return Host.CreateDefaultBuilder(args)
 		   .ConfigureServices(services =>
 		   {
-			   services.AddQuartz(q =>
-			   {
-				   q.UseMicrosoftDependencyInjectionJobFactory();
-			   });
+			   services.AddQuartz();
 
 			   services.AddQuartzHostedService(options =>
 			   {

@@ -21,13 +21,13 @@ namespace CollectArticles.Jobs
 			_findPttService = findPttService;
 		}
 
-		public Task Execute(IJobExecutionContext context)
+		public async Task Execute(IJobExecutionContext context)
 		{
 			_logger.LogInformation(DateTime.Now.ToString());
-			var test = _findPttService.GetSomeText();
+			var test = await _findPttService.GetSomeText();
 			_logger.LogInformation(test);
 
-			return Task.CompletedTask;
+			return;
 		}
 	}
 }
